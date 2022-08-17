@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		FC80224828A1F4CF004F3094 /* EssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC80223F28A1F4CF004F3094 /* EssentialFeed.framework */; };
-		FC80224D28A1F4CF004F3094 /* EssentialFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC80224C28A1F4CF004F3094 /* EssentialFeedTests.swift */; };
 		FC80224E28A1F4CF004F3094 /* EssentialFeed.h in Headers */ = {isa = PBXBuildFile; fileRef = FC80224228A1F4CF004F3094 /* EssentialFeed.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FC80225828A3341A004F3094 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC80225728A3341A004F3094 /* FeedItem.swift */; };
 		FC80225A28A334AD004F3094 /* FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC80225928A334AD004F3094 /* FeedLoader.swift */; };
+		FC80225E28AC7503004F3094 /* RemoteFeedLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC80225D28AC7503004F3094 /* RemoteFeedLoaderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,9 +28,9 @@
 		FC80223F28A1F4CF004F3094 /* EssentialFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC80224228A1F4CF004F3094 /* EssentialFeed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EssentialFeed.h; sourceTree = "<group>"; };
 		FC80224728A1F4CF004F3094 /* EssentialFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC80224C28A1F4CF004F3094 /* EssentialFeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialFeedTests.swift; sourceTree = "<group>"; };
 		FC80225728A3341A004F3094 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 		FC80225928A334AD004F3094 /* FeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoader.swift; sourceTree = "<group>"; };
+		FC80225D28AC7503004F3094 /* RemoteFeedLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoaderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +82,7 @@
 		FC80224B28A1F4CF004F3094 /* EssentialFeedTests */ = {
 			isa = PBXGroup;
 			children = (
-				FC80224C28A1F4CF004F3094 /* EssentialFeedTests.swift */,
+				FC80225D28AC7503004F3094 /* RemoteFeedLoaderTests.swift */,
 			);
 			path = EssentialFeedTests;
 			sourceTree = "<group>";
@@ -162,6 +162,7 @@
 					};
 					FC80224628A1F4CF004F3094 = {
 						CreatedOnToolsVersion = 13.4;
+						LastSwiftMigration = 1340;
 					};
 				};
 			};
@@ -215,7 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC80224D28A1F4CF004F3094 /* EssentialFeedTests.swift in Sources */,
+				FC80225E28AC7503004F3094 /* RemoteFeedLoaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,14 +413,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H9A8C237SL;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.deimund.EssentialFeedTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -428,10 +436,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H9A8C237SL;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.deimund.EssentialFeedTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
